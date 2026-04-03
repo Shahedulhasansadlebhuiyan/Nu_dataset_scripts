@@ -1,5 +1,3 @@
-
-
 import json
 from datasets import load_dataset
 
@@ -37,7 +35,7 @@ ds = load_dataset("HuggingFaceFW/fineweb-edu", name="sample-350BT", split="train
 print(f"Filtering started. Results will be saved to: {OUTPUT_PATH}")
 
 count = 0
-limit = 5000 # Set a limit for your first run to test quality
+limit = 100000 # Set a limit for your first run to test quality
 
 with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
     for example in ds:
@@ -51,4 +49,4 @@ with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         if count >= limit:
             break
 
-print(f"Success! {count} nuclear science documents exported to your Google Drive.")
+print(f"Success! {count} nuclear science documents exported to your Drive.")
